@@ -25,20 +25,20 @@ todo_list = []
 @todo_router.post("/todo")
 #매개변수를 받아서 todo_list에 삽입
 async def add_data(todo: Todo) -> dict:
-    todo_list.append(todo)
+    number = todo.subsr
     # Post 방식으로 요청을 전달하면 
     # 그 subsr 입력이 유효한 subsr 인 경우에
     # cast_recommend 를 사용할 수 있도록 데이터 파일을 생성
-    if todo in subsr_list:
+    if number in subsr_list:
         # 이미 데이터 파일이 있는 경우 데이터 생성은 생략
-        if path.exists(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\cast_recommend\data\\" + str(todo) + ".csv"):
+        if path.exists(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\cast_recommend\data\\" + str(number) + ".csv"):
             return {
                 "message" : "이미 존재하는 데이터에 대한 입력"
             }
         # 데이터 파일이 없는 경우 데이터 파일을 생성
         else:
             # subsr 을 입력 받아서 데이터를 생성
-            cast_data(todo)
+            cast_data(number)
             return {
                 "message" : "Data created successfully."
             }

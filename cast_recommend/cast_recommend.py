@@ -6,7 +6,7 @@ view_data = pd.read_csv(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\c
 # 사용자 번호를 입력받아서 시청한 컨텐츠에 출연한 출연진 기반 추천
 
 # 사용자 번호를 받아서 이와 관련된 점수 데이터를 생성하고 저장
-def cast_data(subsr_num):
+def cast_data(subsr_num: int):
     user_data = view_data[view_data['subsr'] == subsr_num]
     
     # 출연진 정보를 저장할 list
