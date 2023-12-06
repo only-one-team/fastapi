@@ -61,7 +61,8 @@ def cast_data(subsr_num):
     
     # 출연진 점수 및 순위 데이터 저장
     save_data = user_data[['subsr','asset_nm_new', 'ATCR_SCORE', 'rank']]
-    save_data.to_csv("./data/" + str(subsr_num) + ".csv")
+    save_data.to_csv(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\cast_recommend\data\\" + str(subsr_num) + ".csv")
+    
 
 
 # 저장되어 있는 출연진 기반 점수 데이터를 가지고 추천
