@@ -66,7 +66,8 @@ async def get_subsr_id(subsr_id : int) -> dict:
         "message" : "유효하지 않는 입력입니다."
     }
 
-# 기본 주소
+# 기본 주소에 대한 설정
+# 공통 추천인 시청 시간 기반 추천을 제공
 @todo_router.get("/todo")
 async def showrecommend():
     watch_result = watch_rec()
