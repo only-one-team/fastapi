@@ -1,7 +1,7 @@
 import pandas as pd
 from collections import Counter
 
-view_data = pd.read_csv(r"C:\Users\USER\Desktop\project\test\cast_recommend\data\cast_data.csv")
+view_data = pd.read_csv(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\cast_recommend\data\cast_data.csv")
 
 # 사용자 번호를 입력받아서 시청한 컨텐츠에 출연한 출연진 기반 추천
 

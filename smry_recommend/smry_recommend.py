@@ -13,10 +13,10 @@ smry_data.to_csv("./data/smry_data.csv")
 """
 
 # 줄거리를 포함한 데이터 가져오기
-smry_data = pd.read_csv(r"C:\Users\USER\Desktop\project\test\smry_recommend\data\smry_data.csv")
+smry_data = pd.read_csv(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\smry_recommend\data\smry_data.csv")
 
 # 세부 장르 데이터 가져오기
-open_file = open(r'C:\Users\USER\Desktop\project\test\smry_recommend\data\detail_genre.txt', 'r', encoding = 'utf8')
+open_file = open(r'C:\Users\USER\Desktop\project\Recommendation Fastapi\smry_recommend\data\detail_genre.txt', 'r', encoding = 'utf8')
 text = open_file.read()
 open_file.close()
 
@@ -28,7 +28,7 @@ data_list = data_list[:-2]
 
 
 # 불용어 처리
-with open(r'C:\Users\USER\Desktop\project\test\smry_recommend\data\stopword.txt', 'r', encoding = 'utf-8') as f:
+with open(r'C:\Users\USER\Desktop\project\Recommendation Fastapi\smry_recommend\data\stopword.txt', 'r', encoding = 'utf-8') as f:
     stopwords = f.read()
 stopwords_list = stopwords.split('\n')
 
@@ -37,7 +37,7 @@ word_dict_data = {}
 # 각 세부 장르 별로 단어 리스트 생성하고 저장
 for detail_genre in data_list:
     # 각 세부 장르에 대해 단어 데이터 가져오기
-    open_file = open(r'C:\Users\USER\Desktop\project\test\smry_recommend\data\\' + detail_genre + '_words.txt', 'r', encoding = 'utf8')
+    open_file = open(r'C:\Users\USER\Desktop\project\Recommendation Fastapi\smry_recommend\data\\' + detail_genre + '_words.txt', 'r', encoding = 'utf8')
     text = open_file.read()
     
     # 파일 닫기
