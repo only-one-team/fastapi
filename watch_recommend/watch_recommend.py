@@ -1,6 +1,6 @@
 import pandas as pd
 
-genre_data = pd.read_csv("./data/data_for_watch_recommend.csv", encoding="utf-8")
+genre_data = pd.read_csv("./watch_recommend/data/data_for_watch_recommend.csv", encoding="utf-8")
 
 # 러닝 타임 기반 추천(사람과 상관 없이 공통 추천)
 # 추천에 사용할 시청 시간 기반 비율 결과 데이터를 저장
@@ -53,6 +53,6 @@ def runningtime_recommendation():
         rec_list.append(item)
 
     rec_df = pd.DataFrame(rec_list)
-    rec_df.to_csv("./data/watch.csv", index=False)
+    rec_df.to_csv("./watch_recommend/data/watch.csv", index=False)
 
 runningtime_recommendation()

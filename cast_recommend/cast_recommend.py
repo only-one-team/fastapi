@@ -1,7 +1,8 @@
 import pandas as pd
 from collections import Counter
 
-view_data = pd.read_csv(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\cast_recommend\data\cast_data.csv")
+view_data = pd.read_csv(r"./cast_recommend/data/cast_data.csv")
+#cast_recommend\data\cast_data.csv
 
 # 사용자 번호를 입력받아서 시청한 컨텐츠에 출연한 출연진 기반 추천
 
@@ -61,15 +62,14 @@ def cast_data(subsr_num: int):
     
     # 출연진 점수 및 순위 데이터 저장
     save_data = user_data[['subsr','asset_nm_new', 'ATCR_SCORE', 'rank']]
-    save_data.to_csv(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\cast_recommend\data\\" + str(subsr_num) + ".csv")
-    
+    save_data.to_csv(r".\cast_recommend\data\\" + str(subsr_num) + ".csv")
 
 
 # 저장되어 있는 출연진 기반 점수 데이터를 가지고 추천
 # 관련 데이터가 저장되어 있지 않은 경우는 유효하지 않은 사용자 번호로 처리  
 def cast_recommend(subsr_num):
     try:
-        data = pd.read_csv(r"C:\Users\USER\Desktop\project\test\cast_recommend\data\\" + str(subsr_num) + ".csv")
+        data = pd.read_csv(r"./cast_recommend/data/" + str(subsr_num) + ".csv")
         count_data = data.groupby(['asset_nm_new', 'ATCR_SCORE']).count().reset_index()
         
         # ATCR_SCORE 를 기준으로 정렬을 수행

@@ -31,7 +31,7 @@ async def add_data(todo: Todo) -> dict:
     # cast_recommend 를 사용할 수 있도록 데이터 파일을 생성
     if number in subsr_list:
         # 이미 데이터 파일이 있는 경우 데이터 생성은 생략
-        if path.exists(r"C:\Users\USER\Desktop\project\Recommendation Fastapi\cast_recommend\data\\" + str(number) + ".csv"):
+        if path.exists(r"./cast_recommend/data/" + str(number) + ".csv"):
             return {
                 "message" : "이미 존재하는 데이터에 대한 입력"
             }

@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv("./watch_recommend/data/watch.csv", encoding="utf-8")
+data = pd.read_csv(r"./watch_recommend/data/watch.csv", encoding="utf-8")
 
 def watch_rec():
     data_list = []
